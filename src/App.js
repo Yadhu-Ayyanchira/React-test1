@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Details from './Details';
 
 function App() {
+
+  let person = [{
+    name:'yadhu',
+    email:'yadhu@gmail.com'
+  },
+  {
+    name:'anisa',
+    email:'anisa@gmail.com'
+  },
+  {
+    name:'taj',
+    email:'taj@gmail.com'
+  }]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      {
+      person.map((person)=>{
+        return <Details {...person}/>
+      })
+     
+      }
     </div>
   );
-}
+  }
 
 export default App;
